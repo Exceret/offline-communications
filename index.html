@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生线下交流跟踪系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>学生线下交流跟踪系统</h1>
+            <p class="subtitle">中南大学 王诗翔老师课题组</p>
+        </header>
+        
+        <main>
+            <!-- 统计概览 -->
+            <section class="overview">
+                <h2>统计概览</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>总学生数</h3>
+                        <div class="stat-value" id="totalStudents">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>研究生</h3>
+                        <div class="stat-value" id="totalGraduates">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>本科生</h3>
+                        <div class="stat-value" id="totalUndergraduates">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>超时学生</h3>
+                        <div class="stat-value" id="overdueStudents">0</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 超时提醒 -->
+            <section class="overdue-section">
+                <h2>⚠️ 超时未交流提醒</h2>
+                <div class="overdue-container">
+                    <div class="overdue-category">
+                        <h3>研究生（应每2周交流一次）</h3>
+                        <table class="overdue-table">
+                            <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>上次交流日期</th>
+                                    <th>已超时天数</th>
+                                </tr>
+                            </thead>
+                            <tbody id="graduateOverdueList">
+                                <tr><td colspan="3">加载中...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="overdue-category">
+                        <h3>本科生（应每月交流一次）</h3>
+                        <table class="overdue-table">
+                            <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>上次交流日期</th>
+                                    <th>已超时天数</th>
+                                </tr>
+                            </thead>
+                            <tbody id="undergraduateOverdueList">
+                                <tr><td colspan="3">加载中...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 学生交流统计 -->
+            <section class="stats-section">
+                <h2>学生交流统计</h2>
+                <div class="stats-tabs">
+                    <button class="tab-btn active" data-period="total">总计</button>
+                    <button class="tab-btn" data-period="year">近一年</button>
+                    <button class="tab-btn" data-period="halfyear">近半年</button>
+                    <button class="tab-btn" data-period="month">近一个月</button>
+                </div>
+                
+                <div class="stats-content">
+                    <table class="stats-table">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>类型</th>
+                                <th>交流次数</th>
+                                <th>上次交流</th>
+                            </tr>
+                        </thead>
+                        <tbody id="statsTableBody">
+                            <tr><td colspan="4">加载中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>数据更新时间：<span id="lastUpdate">-</span></p>
+            <p>© 2025 中南大学王诗翔老师课题组</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
